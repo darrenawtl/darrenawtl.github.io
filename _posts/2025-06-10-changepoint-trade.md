@@ -12,13 +12,11 @@ footer_scripts:
   - /assets/js/copy-code.js
 ---
 
-
-
 One concern among Asian businesses is that high US tariffs on China will disrupt regional trade patterns. In particular, some are worried that Chinese exporters may decide to "flood" regional markets with goods that they would have otherwise sold to the US.
 
-Change-point detection methods can help detect such changes in trade patterns.
+Change-point detection methods can help identify such changes in trade patterns.
 
-Let's investigate Thailand's merchandise imports from China. First, access the API provided by the [Ministry of Commerce](https://tradereport.moc.go.th/opendata/summarycountries). Then plot the data.
+Let's investigate Thailand's merchandise imports from China. First, access the API provided by the [Ministry of Commerce](https://tradereport.moc.go.th/opendata/summarycountries). 
 
 ```python
 imports = []
@@ -43,9 +41,16 @@ for year in range(2009,2026):
 
 dates = pd.to_datetime(dates, format='%d/%m/%Y')
 data = pd.DataFrame(imports, dates)
-data = data.loc[~(data==0).all(axis=1)] #drop zeroes
-
-data.plot()    
+data = data.loc[~(data==0).all(axis=1)] #drop zeroes   
 ```
 
+The `ruptures` package provides a straightforward and fast implementation of offline change-point detection. The code below implements it using the piecewise constant model (`model=l2`).
 
+```python
+# Detect change points
+algo = rpt.Pelt(model="l2").fit(data)
+result = algo.predict(pen=10)
+
+# Get datetime indices for change points (excluding final endpoint)
+cp_dates = data.index[result[:-1]]
+```
