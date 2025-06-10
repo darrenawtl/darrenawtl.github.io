@@ -1,0 +1,16 @@
+.copy-code-button {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+pre.highlight {
+  position: relative;
+}
