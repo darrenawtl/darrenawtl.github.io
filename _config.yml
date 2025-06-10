@@ -80,8 +80,8 @@ defaults:
       comments: true
       share: true
       related: true
-      css: "assets/css/custom.css"
-      js:  "assets/js/copy-code.js"
+      #css: "assets/css/custom.css"
+      #js:  "assets/js/copy-code.js"
 
   # _pages
   - scope:
@@ -90,8 +90,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      css: "assets/css/custom.css"
-      js:  "assets/js/copy-code.js"
+      #css: "assets/css/custom.css"
+      #js:  "assets/js/copy-code.js"
       
 category_archive:
   type: liquid
