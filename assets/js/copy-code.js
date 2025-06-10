@@ -1,3 +1,5 @@
+console.log("✅ Copy code script is loaded!");
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("pre.highlight").forEach((codeBlock) => {
     const button = document.createElement("button");
