@@ -1,14 +1,17 @@
 ---
 title: "Change-point Detection in International Trade Data"
 date: 2025-06-10
+layout: single
+author_profile: true
 categories:
   - blog
 tags:
   - Change-point detection
   - Time series
-scripts:
+footer_scripts:
   - /assets/js/copy-code.js
 ---
+
 
 
 One concern among Asian businesses is that high US tariffs on China will disrupt regional trade patterns. In particular, some are worried that Chinese exporters may decide to "flood" regional markets with goods that they would have otherwise sold to the US.
