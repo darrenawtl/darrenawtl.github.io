@@ -86,16 +86,18 @@ defaults:
       layout: single
       author_profile: true
       
-  - scope:
-      path: ""
-    values:
-      css: "assets/css/custom.css"
-      js:  "assets/js/copy-code.js"
-
-
 category_archive:
   type: liquid
   path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      css: "assets/css/custom.css"
+      js:  "assets/js/copy-code.js"
+
