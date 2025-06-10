@@ -78,6 +78,9 @@ defaults:
       comments: true
       share: true
       related: true
+      css: "assets/css/custom.css"
+      js:  "assets/js/copy-code.js"
+
   # _pages
   - scope:
       path: "_pages"
@@ -85,6 +88,8 @@ defaults:
     values:
       layout: single
       author_profile: true
+      css: "assets/css/custom.css"
+      js:  "assets/js/copy-code.js"
       
 category_archive:
   type: liquid
