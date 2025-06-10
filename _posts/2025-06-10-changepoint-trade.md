@@ -8,9 +8,14 @@ tags:
   - Time series
 ---
 
+
+One concern among Asian businesses is that high US tariffs on China will disrupt regional trade patterns. In particular, some are worried that Chinese exporters may decide to "flood" regional markets with goods that they would have otherwise sold to the US.
+
+How can we detect for such changes in trade behaviour? 
+
 Let's investigate Thailand's merchandise imports from China. First, access the API provided by the [Ministry of Commerce](https://tradereport.moc.go.th/opendata/summarycountries). Then plot the data.
 
-```ruby
+```python
 imports = []
 dates = []
 for year in range(2009,2026):
