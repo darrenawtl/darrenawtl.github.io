@@ -85,6 +85,13 @@ defaults:
     values:
       layout: single
       author_profile: true
+      
+  - scope:
+      path: ""
+    values:
+      css: "assets/css/custom.css"
+      js:  "assets/js/copy-code.js"
+
 
 category_archive:
   type: liquid
