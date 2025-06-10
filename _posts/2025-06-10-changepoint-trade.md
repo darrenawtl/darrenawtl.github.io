@@ -8,8 +8,6 @@ categories:
 tags:
   - Change-point detection
   - Time series
-footer_scripts:
-  - /assets/js/copy-code.js
 ---
 
 One concern among Asian businesses is that high US tariffs on China will disrupt regional trade patterns. In particular, some are worried that Chinese exporters may decide to "flood" regional markets with goods that they would have otherwise sold to the US.
@@ -24,6 +22,7 @@ Let's investigate Thailand's merchandise imports from China. The code below does
 
 The plot below is partitioned into red and blue regions based on the change points detected by the algorithm.
 
+![Plot showing imports](/assets/images/thimports_cn.png)
 
 
 ```python
