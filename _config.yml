@@ -21,6 +21,8 @@ github_username: darrenawtl
 minimal_mistakes_skin: default
 search: true
 
+enable_copy_code_button: true
+
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
