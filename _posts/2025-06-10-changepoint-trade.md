@@ -6,6 +6,8 @@ categories:
 tags:
   - Change-point detection
   - Time series
+scripts:
+  - /assets/js/copy-code.js
 ---
 
 
