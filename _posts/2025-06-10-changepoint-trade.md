@@ -10,17 +10,17 @@ tags:
   - Time series
 ---
 
-One concern among Asian businesses is that high US tariffs on China will disrupt regional trade patterns. In particular, some are worried that Chinese exporters may decide to "flood" regional markets with goods that they would have otherwise sold to the US.
+One concern among Asian businesses is that high US tariffs on China will disrupt regional trade patterns. A particular worry is that Chinese exporters may decide to "flood" regional markets with goods that they would have otherwise sold to the US.
 
-Change-point detection methods can help identify such shifts in trade patterns.
+Change-point detection methods can help identify such shifts in trade patterns.  
 
-Let's investigate Thailand's merchandise imports from China. The code below does the following:
-(1) Accesses the API provided by the [Ministry of Commerce](https://tradereport.moc.go.th/opendata/summarycountries).
-(2) Cleans the data
-(3) Runs the PELT algorithm using the l2 model
-(4) Visualize the results.
+Let's investigate Thailand's merchandise imports from China. The code at the bottom of this post does the following:
+(1) Accesses the API provided by the [Ministry of Commerce](https://tradereport.moc.go.th/opendata/summarycountries).  
+(2) Cleans the data  
+(3) Runs the PELT algorithm using the l2 model  
+(4) Visualize the results.  
 
-The plot below is partitioned into red and blue regions based on the change points detected by the algorithm.
+Our sample consists of monthly imports from China between January 2016 to April 2025. Observe in the plot below that imports have been on an upward trend since 2024, and the algorithm has detected three change-points during this period. (The red and blue regions indicate where the change-points occur). Importantly, the surge in imports since February 2025 is being classified as a change-point. 
 
 ![Plot showing imports](/assets/images/thimports_cn.png)
 
