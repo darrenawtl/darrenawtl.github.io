@@ -10,6 +10,8 @@ tags:
   - Time series
 ---
 
+Remove the underscore at the start of the filename to re-publish this post. 
+
 One concern among Asian businesses is that high US tariffs on China will disrupt regional trade patterns. A particular worry is that Chinese exporters may decide to "flood" regional markets with goods that they would have otherwise sold to the US.
 
 Change-point detection methods can help identify shifts in trade patterns.  
