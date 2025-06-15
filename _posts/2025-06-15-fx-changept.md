@@ -9,7 +9,7 @@ tags:
   - Change-point detection
   - Time series
 ---
-<p style="font-size: 10px;">
+<p style="font-size: 14px;">
 In the context of exchange rate forecasting with ARIMA models, I find limited evidence that change point detection yields major improvements in forecast accuracy. I consider six currencies relative to the US dollar: the Malaysian ringgit (MYR), Indonesian rupiah (IDR), Singapore dollar (SGD), Korean won (KRW), Japanese yen (JPY), and the Australian dollar (AUD).
 
 The experiment outline is as follows.
@@ -19,7 +19,7 @@ The experiment outline is as follows.
 3. Obtain a subsample from the training data using the change point.
 4. Fit two ARIMA models, one on the full training data and one on the subsample.
 5. Evalute each model's forecasts on the test set.
-</p>
+
 
 
 |Currency| Change Point | Subsample Size | MSE Full  |  MSE Subsample | ARIMA Full | ARIMA Subsample |
@@ -32,7 +32,7 @@ The experiment outline is as follows.
 |  AUD   |  2020-08-03  |      114       |  0.001153 |   0.001220     | (0, 1, 1)  |     (1, 1, 0)   |
 
 
-</span>
+</p>
                                
      
     
