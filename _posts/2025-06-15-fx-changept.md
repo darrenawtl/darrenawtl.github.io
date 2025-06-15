@@ -10,17 +10,21 @@ tags:
   - Time series
 ---
 
+1. For each currency, use the first 90% of the sample as training set.
+2. Using the PELT algorithim in `ruptures`, identify the last change point in the training data.
+3. Obtain a subsample from the training data using the change point.
+4. Fit two ARIMA models, one on the full training data and one on the subsample.
+5. Evalute each model's forecasts on the test set.
 
 
-
-|Currency| Last_Change_Point|  Train2_Length | MSE_train |  MSE_train2 | MAE_train | MAE_train2 | ARIMA_order_train | ARIMA_order_train2 |
-|--------|------------------|----------------|-----------|-------------|-----------|------------|-------------------|--------------------|
-|  MYR   |  2022-04-25      |      56        |  0.001325 |   0.001388  |  0.032519 |  0.031118  |     (1, 1, 0)     |     (1, 1, 0)      |
-|  IDR   |  2018-04-16      |      266       |  0.004565 |   0.004518  |  0.060045 |  0.059659  |     (0, 1, 1)     |     (0, 1, 1)      |
-|  SGD   |  2014-12-08      |      409       |  0.003890 |   0.003969  |  0.059862 |  0.060515  |     (0, 1, 1)     |     (1, 1, 1)      |
-|  KRW   |  2022-04-25      |      24        |  0.003976 |   0.003263  |  0.054650 |  0.049506  |     (1, 1, 1)     |     (0, 1, 1)      |
-|  JPY   |  2022-03-21      |      29        |  0.002907 |   0.002885  |  0.044549 |  0.044206  |     (0, 1, 1)     |     (1, 1, 0)      |
-|  AUD   |  2020-08-03      |      114       |  0.001153 |   0.001220  |  0.028312 |  0.029081  |     (0, 1, 1)     |     (1, 1, 0)      |
+|Currency| Change Point | Subsample Size | MSE Full  |  MSE Subsample | ARIMA Full | ARIMA Subsample |
+|--------|--------------|----------------|-----------|----------------|------------|-----------------|
+|  MYR   |  2022-04-25  |      56        |  0.001325 |   0.001388     | (1, 1, 0)  |     (1, 1, 0)   |
+|  IDR   |  2018-04-16  |      266       |  0.004565 |   0.004518     | (0, 1, 1)  |     (0, 1, 1)   |
+|  SGD   |  2014-12-08  |      409       |  0.003890 |   0.003969     | (0, 1, 1)  |     (1, 1, 1)   |
+|  KRW   |  2022-04-25  |      24        |  0.003976 |   0.003263     | (1, 1, 1)  |     (0, 1, 1)   |
+|  JPY   |  2022-03-21  |      29        |  0.002907 |   0.002885     | (0, 1, 1)  |     (1, 1, 0)   |
+|  AUD   |  2020-08-03  |      114       |  0.001153 |   0.001220     | (0, 1, 1)  |     (1, 1, 0)   |
                                
      
     
