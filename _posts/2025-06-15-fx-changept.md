@@ -22,6 +22,7 @@ The experiment outline is as follows.
 </p>
 
 <div style="font-size: 14px; width: 80%;">
+  
 |Currency| Change Point | Subsample Size | MSE Full  |  MSE Subsample | ARIMA Full | ARIMA Subsample |
 |--------|--------------|----------------|-----------|----------------|------------|-----------------|
 |  MYR   |  2022-04-25  |      56        |  0.001325 |   0.001388     | (1, 1, 0)  |     (1, 1, 0)   |
@@ -30,6 +31,7 @@ The experiment outline is as follows.
 |  KRW   |  2022-04-25  |      24        |  0.003976 |   0.003263     | (1, 1, 1)  |     (0, 1, 1)   |
 |  JPY   |  2022-03-21  |      29        |  0.002907 |   0.002885     | (0, 1, 1)  |     (1, 1, 0)   |
 |  AUD   |  2020-08-03  |      114       |  0.001153 |   0.001220     | (0, 1, 1)  |     (1, 1, 0)   |
+
 </div>
 
 
