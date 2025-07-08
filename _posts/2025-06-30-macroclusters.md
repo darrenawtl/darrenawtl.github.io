@@ -22,8 +22,6 @@ Let us now see how these clusters perform compared to prevailing sovereign ratin
 
 The table below summarizes the results. Except for recall under predicted defaults, the cluster-based model outperforms the ratings-based model, with an overall accuracy of 0.885 (a material improvement from 0.802).
 
-
-
 |                 | precision | recall  | f1-score | support |
 |-----------------|-----------|---------|----------|---------|
 |**Cluster Model**|           |         |          |         |
