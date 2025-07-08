@@ -19,18 +19,15 @@ We analyze a sample of 2,175 country-year observations and select 13 macroeconom
 Using a Gaussian Mixture Model, we cluster the observations based on their macroeconomic features, the year, and the indicator variable for default, lagged by a year. We want to see how these clusters perform compared to prevailing sovereign ratings. To do so, we fit two logit models that predict the probability of default: one using the clusters and the other using sovereign ratings as predictor variables.  
 
 
-Cluster Model
-|          |precision|recall|f1-score|support|
-|----------|---------|------|--------|-------|
-|No Default|0.885    |0.927 |0.906   |482    |
-|Default   |0.886    |0.824 |0.854   |330    |
-|accuracy  |         |      |0.885   |812    |  
 
 
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Row 1    | Cell     | Cell     |
-| Row 2    | Cell     | Cell     |
+
+
+|            | precision | recall  | f1-score | support |
+|------------|----------|----------|----------|---------|
+| No Default | 0.885    | 0.927    | 0.906    | 482     |
+| Default    | 0.886    | 0.824    | 0.854    | 330     |
+| accuracy   |          |          | 0.885    | 812     |
 
 
 
