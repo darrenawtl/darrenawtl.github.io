@@ -10,7 +10,7 @@ tags:
   - Sovereign defaults
 ---
 
-**In the context of predicting government default, I find that clusters based on macroeconomic variables and past default data provide a viable and objective alternative to credit ratings**.  
+**In the context of predicting government default, I find that clustering algorithms provide a viable and objective alternative to credit ratings**.  
 
 The industry standard for measuring sovereign credit risk (probability of government default) are the credit ratings assigned by S&P, Moody's, and Fitch. Businesses rely on these ratings to make decisions. Commercial banks for example, use the ratings to allocate loss provisions across countries. And yet, the prevailing ratings system has long been criticized for being subjective and bias. One possible solution is to use unsupervised learning methods, such as clustering algorithms. The following experiment suggests that clustering is capable of outperforming credit rating agencies in predicting sovereign defaults.
 
@@ -36,3 +36,5 @@ Let us now see how these clusters perform compared to prevailing sovereign ratin
 The table above summarizes the results. Except for recall under predicted defaults, the cluster-based model outperforms the ratings-based model, with an overall accuracy of 0.885 (a material improvement from 0.802). In addition to predictive accuracy, a cluster-based approach is also easy to implement and, because of data availability, offers a wider coverage than ratings agencies. 
 
 **Limitations**. Although the cluster-based models accuracy is high, it failed to predict Greece's default in 2015 - a high profile, developed market default. Reason: False statistics, and no history of default pre-2010.
+
+**Choice of clustering algorithm**
