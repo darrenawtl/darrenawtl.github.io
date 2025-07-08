@@ -25,6 +25,7 @@ Using a Gaussian Mixture Model, we cluster the observations based on their macro
 
 |            | precision | recall  | f1-score | support |
 |------------|----------|----------|----------|---------|
+|Cluster Model                                          |
 | No Default | 0.885    | 0.927    | 0.906    | 482     |
 | Default    | 0.886    | 0.824    | 0.854    | 330     |
 | accuracy   |          |          | 0.885    | 812     |
