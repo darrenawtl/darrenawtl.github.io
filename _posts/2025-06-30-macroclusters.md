@@ -29,4 +29,4 @@ Using a Gaussian Mixture Model, we cluster the observations based on their macro
 |**Ratings Model**|           |         |          |         |   
 | No Default      | 0.892     | 0.774   | 0.829    | 461     |
 | Default         | 0.697     | 0.848   | 0.765    | 282     |
-| accuracy        |           |         | 0.885    | 743     |
+| accuracy        |           |         | 0.802    | 743     |
