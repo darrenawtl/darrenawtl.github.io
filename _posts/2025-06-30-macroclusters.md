@@ -10,7 +10,7 @@ tags:
   - Sovereign defaults
 ---
 
-**In predicting government default, I find that clustering algorithms provide a viable and objective alternative to credit ratings**.  
+**When predicting government default, I find that clustering algorithms are a viable and objective alternative to credit ratings**.  
 
 The industry standard for measuring sovereign credit risk (probability of government default) are the credit ratings assigned by S&P, Moody's, and Fitch. Businesses rely on these ratings to make decisions. Commercial banks for example, use the ratings to allocate loss provisions across countries. And yet, the prevailing ratings system has long been criticized for being opaque, subjective and having bias See (UNCTAD, 2024) for a recent review. One possible alternative is to use unsupervised learning methods, such as clustering algorithms. The following experiment suggests that clustering is capable of outperforming credit rating agencies in predicting sovereign defaults.
 
@@ -35,7 +35,7 @@ To compare performance, I fit two logit models that predict the probability of d
 
 The table above summarizes the results. Except for recall under predicted defaults, the cluster-based model outperforms the ratings-based model, with an overall accuracy of 0.881 (a material improvement from 0.802). 
 
-**Reducing clusters**. There's no reason to believe that 22 clusters yield optimal results. For simplicity, consider k-means clustering with just 2 clusters. The logit model does better on every metric when compared to the one based on 22 clusters, with an overall accuray of 0.895. One possible analogue when using credit-ratings is to group the letter ratings into "investment-grade" and "speculative-grade". Interestingly, the logit model worsens under this classification.
+**Reducing clusters**. There's no reason to believe that 22 clusters yield optimal results. For simplicity and interpretability, consider k-means clustering with just 2 clusters. The logit model does better on every metric when compared to the one based on 22 clusters, with an overall accuray of 0.895. An analogue for credit-ratings exists: group the letter ratings into "investment-grade" and "speculative-grade". Interestingly, the logit model worsens under this classification.
 
 
 |                 | precision | recall  | f1-score | support |
