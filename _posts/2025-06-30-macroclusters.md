@@ -35,12 +35,15 @@ To compare performance, I fit two logit models that predict the probability of d
 
 The table above summarizes the results. Except for recall under predicted defaults, the cluster-based model outperforms the ratings-based model, with an overall accuracy of 0.881 (a material improvement from 0.802). 
 
-**Reducing clusters**  
+**Reducing clusters**. The model's predictive accuracy is even better if we reduce the number of clusters.
 
-**Illustrative examples**  The figure below helps to visualize the differences between the k-means clusters and S&P's credit-ratings. To reduce dimensionality and facilitate understanding, the plot shows only the first two principal components of the dataset. K-means separates the data cleanly. S&P's ratings do not.
+**Illustrative examples**.  The figure below helps to visualize the differences between the k-means clusters and S&P's credit-ratings. To reduce dimensionality and facilitate understanding, the plot shows only the first two principal components of the dataset. K-means separates the data cleanly. S&P's ratings do not.
 
-![Model performance chart](/assets/images/pca_clusters_vs_ratings.png)
+![Clusters vs ratings chart](/assets/images/pca_clusters_vs_ratings.png)
 
+One major sovereign default in recent history is that by Greece in 2015. The cluster-based model was successful in predicting the event.
+
+![greece](/assets/images/defaultprob.png)
 
 
 **Summary** Clustering can lead to better predictive accuracy than credit ratings. And while the sovereign ratings process involves human "expert" judgment, clustering is data-driven and reproducible. A cluster-based approach can also help us to group countries that are not covered by credit-rating agencies, as the World Bank dataset has larger coverage.
