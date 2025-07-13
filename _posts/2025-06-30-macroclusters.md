@@ -60,6 +60,6 @@ One major sovereign default in recent history is that by Greece in 2015. The clu
 
 **Summary**. This experiment relied solely on annual macroeconomic and lagged sovereign default data to determine clusters, but still managed to deliver better predictive accuracy than credit ratings when fed into a logit model. And while the sovereign ratings process involves "expert" judgment, clustering is data-driven and reproducible. A cluster-based approach can also help us to group countries that are not covered by credit-rating agencies, as the World Bank dataset has larger coverage.
 
-References  
-* *UNCTAD. (2024). A world of debt: A growing burden to global prosperity (UNCTAD Global Policy Report). United Nations Conference on Trade and Development.* *
+<ins>References</ins>  
+*UNCTAD. (2024). A world of debt: A growing burden to global prosperity (UNCTAD Global Policy Report). United Nations Conference on Trade and Development.*
 
