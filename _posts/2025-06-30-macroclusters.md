@@ -35,7 +35,7 @@ To compare performance, I fit two logit models that predict the probability of d
 
 The table above summarizes the results. Except for recall under predicted defaults, the cluster-based model outperforms the ratings-based model, with an overall accuracy of 0.881 (a material improvement from 0.802). 
 
-**Reducing clusters**. There's no reason to believe that 22 clusters yield optimal results. For simplicity and interpretability, consider k-means clustering with just 2 clusters. The logit model does better on every metric when compared to the one based on 22 clusters, with an overall accuray of 0.895. An analogue for credit-ratings exists: group the letter ratings into "investment-grade" and "speculative-grade". Interestingly, the logit model worsens under this classification.
+**Reducing number of clusters**. Credit ratings can also be divided into "investment-grade" and "speculative-grade", so it is worth considering if this level of aggregation gives better results. Using k-means clustering with just 2 clusters, the logit model does better on every metric, with an overall accuray of 0.895. But the ratings-based model worsens. 
 
 
 |                 | precision | recall  | f1-score | support |
@@ -49,16 +49,16 @@ The table above summarizes the results. Except for recall under predicted defaul
 | Default         | 0.675     | 0.888   | 0.767    | 330     |
 | accuracy        |           |         | 0.781    | 812     |
 
-**Illustrative examples**.  Continuing with the 2-cluster set up, the figure below helps to visualize the differences between the k-means clusters and S&P's credit-ratings. To reduce dimensionality and facilitate understanding, the plot shows only the first two principal components of the dataset. K-means separates the data cleanly. S&P's ratings do not.
+**Illustrative examples**.  Continuing with the 2-cluster set up, the figure below helps to visualize the differences between the k-means clusters and S&P's credit-ratings. To reduce dimensionality and facilitate understanding, the plot shows only the first two principal components of the dataset. The first component is positively correlated with GDP per capita and the current account balance, while the second component is positively correlated with central government debt and taxes. Loosely speaking, the first component can be thought of as a measure of economic strength while the second component is a representation of a government's fiscal policy stance. In any case, clustering by  K-means separates the data cleanly. S&P's ratings do not.
 
 ![Clusters vs ratings chart](/assets/images/pca_clusters_vs_ratings.png)
 
-One major sovereign default in recent history is that by Greece in 2015. The cluster-based model successfully predicts the event. It should be noted that S&P downgraded Greece in 2010, in response to weak economic data. Viewed this way, S&P's judgment adds value in a way that the cluster-based model does not. The key limitation is that the cluster model depends on historic precedent. In particular, notice that the estimated probability of default jumped to 0.8 in 2013 because the clusters took into account the round of debt restructuring that took place in 2012 (which the Bank of Canada considers as a form of sovereign default). One solution worth exploring in the future is to use timelier data such as high-frequency market indicators to help fine-tune the clustering algorithm. 
+One major sovereign default in recent history is that by Greece in 2015. The cluster-based model successfully predicts the event. It should be noted that S&P downgraded Greece in 2010, in response to weak economic data. Viewed this way, S&P's judgment adds value in a way that the cluster-based model does not. The key limitation is that the cluster model depends on historic precedent. In particular, notice that the estimated probability of default jumped to 0.8 in 2013 because the clusters took into account the round of debt restructuring that took place in 2012 (which the Bank of Canada considers as a form of sovereign default). A solution worth exploring in the future is to use timelier data such as high-frequency market indicators &mdash such as credit-default swaps &mdash to help fine-tune the clustering algorithm. 
 
 ![greece](/assets/images/defaultprob.png)
 
 
-**Summary**. This experiment relied solely on annual macroeconomic and lagged sovereign default data to determine clusters, but still managed to deliver better predictive accuracy than credit ratings when fed into a logit model. And while the sovereign ratings process involves "expert" judgment, clustering is data-driven and reproducible. A cluster-based approach can also help us to group countries that are not covered by credit-rating agencies, as the World Bank dataset has larger coverage.
+**Summary**. This experiment relies solely on annual macroeconomic and lagged sovereign default data to determine clusters, but still managed to deliver better predictive accuracy than credit ratings when fed into a logit model. And while the sovereign ratings process involves "expert" judgment, clustering is data-driven and reproducible. A cluster-based approach can also help us to group countries that are not covered by credit-rating agencies, as the World Bank dataset has larger coverage.
 
 <ins>References</ins>  
 *UNCTAD. (2024). A world of debt: A growing burden to global prosperity (UNCTAD Global Policy Report). United Nations Conference on Trade and Development.*
