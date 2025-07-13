@@ -1,5 +1,5 @@
-### Data sources ###
-* The sovereign default data and ratings history data will need to be saved locally for the code to run.  
+### Data sources ###  
+The sovereign default data and ratings history data will need to be saved locally for the code to run.  
 * Sovereign default database: https://www.bankofcanada.ca/2024/07/staff-analytical-note-2024-19/  
 * Ratings history: https://www.spglobal.com/ratings/en/regulatory/article/-/view/sourceId/11824942  
 
