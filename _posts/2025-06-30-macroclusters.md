@@ -12,13 +12,13 @@ tags:
 
 **When predicting government default, I find that clustering algorithms are a viable and objective alternative to credit ratings**.  
 
-The industry standard for measuring sovereign credit risk (probability of government default) are the credit ratings assigned by S&P, Moody's, and Fitch. Businesses rely on these ratings to make decisions. Commercial banks for example, use the ratings to allocate loss provisions across countries. And yet, the prevailing ratings system has long been criticized for being opaque, subjective and having bias. See (UNCTAD, 2024) for a recent review. One possible alternative is to use unsupervised learning methods, such as clustering algorithms. The following experiment suggests that clustering is capable of outperforming credit rating agencies in predicting sovereign defaults.  *See the full code [here](https://github.com/darrenawtl/darrenawtl.github.io/tree/master/code/macroclusters)*
+The industry standard for measuring sovereign credit risk (probability of government default) are the credit ratings assigned by S&P, Moody's, and Fitch. Businesses rely on these ratings to make decisions. Commercial banks for example, use the ratings to allocate loss provisions across countries. And yet, the prevailing ratings system has long been criticized for being opaque, subjective and having bias. See (UNCTAD, 2024) for a recent review. One possible alternative is to use unsupervised learning methods, such as clustering algorithms. The following experiment suggests that clustering is capable of outperforming credit rating agencies in predicting sovereign defaults.  (*See the full code [here](https://github.com/darrenawtl/darrenawtl.github.io/tree/master/code/macroclusters)*).
 
 **The Dataset**. 
 I analyze a sample of 2,175 country-year observations which range from 2000 to 2021 and select 13 macroeconomic variables which are commonly used as inputs by agencies. (For example, real GDP growth, CPI inflation, current account balances, and central government debt). Data for central government debt is taken from IMF's Global Debt Database, while the other variables are downloaded from the World Bank's database. They are imputed wherever missing, by taking the country's variable average if available, and the global average otherwise. Each observation is matched to an indicator variable for default, based on sovereign default estimates compiled by the Bank of Canada and the Bank of England. The latest figures are found [here](https://www.bankofcanada.ca/2024/07/staff-analytical-note-2024-19/). Every observation has a rating assigned by S&P, the data for which can be found on the company's website [here](https://www.spglobal.com/ratings/en/regulatory/article/-/view/sourceId/11824942). 
 
 **The Experiment**.
-Using k-means, cluster the observations based on their macroeconomic features, the year, and the one-year lagged indicator variable for default. For a fair comparison, set the number of clusters to 22, which is the same number of classes under the credit-ratings system.  
+For simplicity, use k-means to cluster the observations based on their macroeconomic features, the year, and the one-year lagged indicator variable for default. For a fair comparison, set the number of clusters to 22, which is the same number of classes under the credit-ratings system.  
 
 To compare performance, I fit two logit models that predict the probability of default: one using the clusters and the other using sovereign ratings as predictor variables. The training set is based on observations from 2000-2015, which gives a test set that is roughly 40% of all observations. For validation, set all predicted probabilities that are greater than or equal to 0.5 as a predicted default.   
 
@@ -35,7 +35,7 @@ To compare performance, I fit two logit models that predict the probability of d
 
 The table above summarizes the results. Except for recall under predicted defaults, the cluster-based model outperforms the ratings-based model, with an overall accuracy of 0.881 (a material improvement from 0.802). 
 
-**Reducing number of clusters**. Credit ratings can also be divided into "investment-grade" and "speculative-grade", so it is worth considering if this level of aggregation gives better results. Using k-means clustering with just 2 clusters, the logit model does better on every metric, with an overall accuray of 0.895. But the ratings-based model worsens. 
+**Reducing number of clusters**. Credit ratings can also be divided into "investment-grade" and "speculative-grade", so it is worth considering if this level of aggregation gives better results. Using k-means clustering with just 2 clusters, the logit model does better on every metric, with an overall accuracy of 0.895. But the ratings-based model worsens. 
 
 
 |                 | precision | recall  | f1-score | support |
@@ -53,7 +53,7 @@ The table above summarizes the results. Except for recall under predicted defaul
 
 ![Clusters vs ratings chart](/assets/images/pca_clusters_vs_ratings.png)
 
-One major sovereign default in recent history is that by Greece in 2015. The cluster-based model successfully predicts the event. It should be noted that S&P downgraded Greece in 2010, in response to weak economic data. Viewed this way, S&P's judgment adds value in a way that the cluster-based model does not. The key limitation is that the cluster model depends on historic precedent. In particular, notice that the estimated probability of default jumped to 0.8 in 2013 because the clusters took into account the round of debt restructuring that took place in 2012 (which the Bank of Canada considers as a form of sovereign default). A solution worth exploring in the future is to use timelier data such as high-frequency market indicators &mdash such as credit-default swaps &mdash to help fine-tune the clustering algorithm. 
+One major sovereign default in recent history is that by Greece in 2015. The cluster-based model successfully predicts the event. It should be noted that S&P downgraded Greece in 2010, in response to weak economic data. Viewed this way, S&P's judgment adds value in a way that the cluster-based model does not. The key limitation is that the cluster model depends on historic precedent. In particular, notice that the estimated probability of default jumped to 0.8 in 2013 because the clusters took into account the round of debt restructuring that took place in 2012 (which the Bank of Canada considers as a form of sovereign default). A solution worth exploring in the future is to use timelier data such as high-frequency market indicators --- such as credit-default swaps --- to help fine-tune the clustering algorithm. 
 
 ![greece](/assets/images/defaultprob.png)
 
