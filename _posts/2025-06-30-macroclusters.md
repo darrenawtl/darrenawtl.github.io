@@ -37,7 +37,10 @@ The table above summarizes the results. Except for recall under predicted defaul
 
 **Reducing clusters**  
 
-**An illustrative example**  Greece.
+**Illustrative examples**  The figure below helps to visualize the differences between the k-means clusters and S&P's credit-ratings. To reduce dimensionality and facilitate understanding, the plot shows only the first two principal components of the dataset. K-means separates the data cleanly. S&P's ratings do not.
+
+![Model performance chart](/assets/images/pca_clusters_vs_ratings.png)
+
 
 
 **Summary** Clustering can lead to better predictive accuracy than credit ratings. And while the sovereign ratings process involves human "expert" judgment, clustering is data-driven and reproducible. A cluster-based approach can also help us to group countries that are not covered by credit-rating agencies, as the World Bank dataset has larger coverage.
