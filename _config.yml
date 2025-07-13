@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Darren Aw"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "I'm interested in time series analysis, nonparametric methods, and high-dimensional statistics."
+  bio    : "I'm interested in how cluster analysis and nonparametric methods can be used to understand stochastic processes."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
