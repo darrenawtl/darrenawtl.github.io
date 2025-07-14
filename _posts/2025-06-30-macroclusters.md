@@ -24,11 +24,11 @@ To compare performance, I fit two logit models that predict the probability of d
 
 |                 | precision | recall  | f1-score | support |
 |-----------------|-----------|---------|----------|---------|
-|**Cluster Model**|           |         |          |         |
+|**22-Cluster Model**|           |         |          |         |
 | No Default      | 0.914     | 0.882   | 0.898    | 482     |
 | Default         | 0.836     | 0.879   | 0.857    | 330     |
 | accuracy        |           |         | 0.881    | 812     |
-|**Ratings Model**|           |         |          |         |   
+|**22-Ratings Model**|           |         |          |         |   
 | No Default      | 0.892     | 0.774   | 0.829    | 461     |
 | Default         | 0.697     | 0.848   | 0.765    | 282     |
 | accuracy        |           |         | 0.802    | 743     |
@@ -40,23 +40,22 @@ The table above summarizes the results. Except for recall under predicted defaul
 
 |                 | precision | recall  | f1-score | support |
 |-----------------|-----------|---------|----------|---------|
-|**Cluster Model**|           |         |          |         |
+|**2-Cluster Model**|           |         |          |         |
 | No Default      | 0.925     | 0.900   | 0.913    | 482     |
 | Default         | 0.860     | 0.894   | 0.877    | 330     |
 | accuracy        |           |         | 0.898    | 812     |
-|**Ratings Model**|           |         |          |         |   
+|**2-Ratings Model**|           |         |          |         |   
 | No Default      | 0.902     | 0.707   | 0.793    | 482     |
 | Default         | 0.675     | 0.888   | 0.767    | 330     |
 | accuracy        |           |         | 0.781    | 812     |
 
-**Illustrative examples**.  Continuing with the 2-cluster set up, the figure below helps to visualize the differences between the k-means clusters and S&P's credit-ratings. To reduce dimensionality and facilitate understanding, the plot shows only the first two principal components of the dataset. The first component is positively correlated with GDP per capita and the current account balance, while the second component is positively correlated with central government debt and taxes. Loosely speaking, the first component can be thought of as a measure of economic strength while the second component is a representation of a government's fiscal policy stance. In any case, clustering by  K-means separates the data cleanly. S&P's ratings do not.
+**Illustrative examples**.  Continuing with the 2-cluster set up, the figure below helps to visualize the differences between the k-means clusters and S&P's credit-ratings. To reduce dimensionality and facilitate understanding, the plot shows only the first two principal components of the dataset. The first component has a high positive correlation with GDP per capita and the current account balance, while the second component has a high positive correlation with central government debt and taxes. Loosely speaking, the first component can be thought of as a measure of economic strength while the second component is a representation of a government's fiscal policy stance. In any case, clustering by  K-means separates the data cleanly. S&P's ratings do not.
 
 ![Clusters vs ratings chart](/assets/images/pca_clusters_vs_ratings.png)
 
-One major sovereign default in recent history is that by Greece in 2015. The cluster-based model successfully predicts the event. It should be noted that S&P downgraded Greece in 2010, in response to weak economic data. Viewed this way, S&P's judgment adds value in a way that the cluster-based model does not. The key limitation is that the cluster model depends on historic precedent. In particular, notice that the estimated probability of default jumped to 0.8 in 2013 because the clusters took into account the round of debt restructuring that took place in 2012 (which the Bank of Canada considers as a form of sovereign default). A solution worth exploring in the future is to use timelier data such as high-frequency market indicators --- such as credit-default swaps --- to help fine-tune the clustering algorithm. 
+One major sovereign default in recent history is that by Greece, which was characterized by a debt restructuring in 2012 and then a default on IMF loans in 2015. These two events are captured as default in the Bank of Canada's database, but the cluster-based model is only successful in predicting the later default. The key limitation is that the cluster model depends on historic precedent; Greece did not default before 2012. It should be noted that S&P downgraded Greece in 2009 due to concerns about fiscal stability, which translates to a successful prediction in the logit model in both 2012 and 2015. But this should not be viewed as a failure of clustering, but rather a lack of timelier data. A solution worth exploring in the future is to use high-frequency market indicators --- such as credit-default swaps --- to help fine-tune the clustering algorithm. 
 
 ![greece](/assets/images/defaultprob.png)
-
 
 **Summary**. This experiment relies solely on annual macroeconomic and lagged sovereign default data to determine clusters, but still managed to deliver better predictive accuracy than credit ratings when fed into a logit model. And while the sovereign ratings process involves "expert" judgment, clustering is data-driven and reproducible. A cluster-based approach can also help us to group countries that are not covered by credit-rating agencies, as the World Bank dataset has larger coverage.
 
